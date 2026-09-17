@@ -451,7 +451,7 @@ em { font-style: italic; }
 .timeline__item strong { display: block; font-size: 16.5px; }
 .timeline__item span { font-size: 14px; color: var(--muted); }
 
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border-radius: var(--radius-sm); overflow: hidden; background: var(--line); border: 1px solid var(--line); }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border-radius: var(--radius-sm); overflow: hidden; background: var(--line); border: 1px solid var(--line); }
 .stat { background: var(--white); padding: 20px; }
 .stat strong { display: block; font-family: var(--font-display); font-size: 38px; font-weight: 400; color: var(--teal); line-height: 1.1; }
 .stat span { font-size: 13px; color: var(--muted); }
@@ -465,6 +465,8 @@ em { font-style: italic; }
 .bio__figures div { background: var(--white); padding: 16px 18px; }
 .bio__figures strong { display: block; font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--terra); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .bio__figures span { font-size: 13px; color: var(--muted); }
+.bio__body .bio__welcome { text-align: center; color: var(--ink-2); margin: 36px auto 0; max-width: 640px; font-size: 17px; }
+.bio__body .bio__welcome--strong { margin-top: 10px; font-family: var(--font-display); font-style: italic; font-size: 26px; color: var(--teal); }
 .bio__body .bio__closing { margin-top: 28px; padding: 22px 26px; border-left: 3px solid var(--teal); background: var(--white); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--ink-2); }
 @media (max-width: 640px) {
   .bio { margin-top: 70px; }
