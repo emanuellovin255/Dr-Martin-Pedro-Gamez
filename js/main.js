@@ -155,7 +155,7 @@ const CONFIG = {
       const dur = 1600;
       const tick = (t) => {
         const p = Math.min((t - start) / dur, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + (p === 1 ? suffix : "");
+        el.textContent = (el.dataset.prefix || "") + Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString("en-US") + (p === 1 ? suffix : "");
         if (p < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);

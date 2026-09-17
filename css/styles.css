@@ -456,6 +456,21 @@ em { font-style: italic; }
 .stat strong { display: block; font-family: var(--font-display); font-size: 38px; font-weight: 400; color: var(--teal); line-height: 1.1; }
 .stat span { font-size: 13px; color: var(--muted); }
 
+.bio { margin-top: 110px; }
+.bio__body { max-width: 780px; margin-inline: auto; }
+.bio__body p { color: var(--muted); margin: 0 0 16px; }
+.bio__body .about__lead { color: var(--ink-2); }
+.bio__h { font-family: var(--font-display); font-weight: 400; font-size: 26px; color: var(--ink); margin: 42px 0 14px; }
+.bio__figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 24px 0 28px; border-radius: var(--radius-sm); overflow: hidden; background: var(--line); border: 1px solid var(--line); }
+.bio__figures div { background: var(--white); padding: 16px 18px; }
+.bio__figures strong { display: block; font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--terra); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.bio__figures span { font-size: 13px; color: var(--muted); }
+.bio__body .bio__closing { margin-top: 28px; padding: 22px 26px; border-left: 3px solid var(--teal); background: var(--white); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--ink-2); }
+@media (max-width: 640px) {
+  .bio { margin-top: 70px; }
+  .bio__figures { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ---------- Testimonials ---------- */
 .testimonials { background: var(--white); }
 .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
