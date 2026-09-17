@@ -631,3 +631,18 @@ button.yt__item { width: 100%; border: 1.5px solid transparent; font: inherit; c
 .yt__thumb::after { content: ""; position: absolute; inset: 0; background: rgba(14, 27, 43, .25); transition: background .3s; }
 .yt__item:hover .yt__thumb::after { background: rgba(224, 52, 43, .35); }
 .yt__thumb svg { position: relative; z-index: 1; }
+
+/* ---------- Fotos reales del Dr. ---------- */
+.hero__dr { color: var(--terra); font-style: italic; font-weight: 300; }
+.portrait__placeholder--photo, .about__photo--img { background: #13202F; }
+.portrait__placeholder--photo::before, .about__photo--img::before { display: none; }
+.portrait__placeholder--photo img, .about__photo--img img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover;
+}
+.portrait__placeholder--photo img { object-position: 50% 0%; transform: scale(1.02); }
+.about__photo--img img { object-position: 50% 30%; }
+.portrait__placeholder--photo::after, .about__photo--img::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 60%, rgba(14, 27, 43, .35));
+}
