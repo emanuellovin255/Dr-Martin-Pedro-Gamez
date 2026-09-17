@@ -6,11 +6,18 @@ const CONFIG = {
   academyName: "Gámez Dental Academy",   // nombre oficial de la escuela / academia
   whatsapp: "",                           // solo dígitos con lada país, ej: "5219511234567"
   whatsappDisplay: "",                    // ej: "951 123 4567"
-  youtubeChannel: "",                     // ej: "https://www.youtube.com/@canal"
-  youtubeVideoId: "",                     // ID del último video, ej: "dQw4w9WgXcQ"
+  youtubeChannel: "https://www.youtube.com/@DoctorPedroGamez",
+  youtubeVideoId: "6Spl0PhWNA4",          // video principal
   lmsUrl: "",                             // URL de la plataforma de cursos
   instagram: "",
-  facebook: "",
+  facebook: "https://www.facebook.com/peter.gamez.2025",
+  // Videos destacados del canal (id, título, etiqueta)
+  videos: [
+    { id: "qgpw1CEmcvE", title: "Rehabilitación oral del paciente desdentado total con dentaduras provisionales", tag: "Caso clínico · Prostodoncia total" },
+    { id: "K0Z9nZ64Exc", title: "Impresión fisiológica y rectificación de bordes (arcada superior)", tag: "Técnica paso a paso" },
+    { id: "dZi59Cv4ics", title: "Palatray XL de Kulzer: resina acrílica fotocurable en placas", tag: "Materiales dentales" },
+    { id: "v8snwnC8LM0", title: "Clase: materiales de impresión en Prótesis Bucal Parcial Fija", tag: "Docencia · PBPF" },
+  ],
 };
 
 (() => {
@@ -59,8 +66,30 @@ const CONFIG = {
     waFloat.removeAttribute("target");
   }
 
-  if (CONFIG.youtubeVideoId) {
-    $("#ytPlayer").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${CONFIG.youtubeVideoId}?rel=0" title="Video del Dr. Martín Gámez" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  const ytPlayer = $("#ytPlayer");
+  const playVideo = (id, autoplay = false) => {
+    ytPlayer.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?rel=0${autoplay ? "&autoplay=1" : ""}" title="Video del Dr. Pedro Gámez" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  };
+  if (CONFIG.youtubeVideoId) playVideo(CONFIG.youtubeVideoId);
+
+  const ytList = $("#ytList");
+  if (ytList && CONFIG.videos?.length) {
+    ytList.innerHTML = CONFIG.videos
+      .map(
+        (v) => `
+        <button type="button" class="yt__item" data-video="${v.id}">
+          <span class="yt__thumb" style="background-image:url('https://i.ytimg.com/vi/${v.id}/mqdefault.jpg')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="yt__meta"><strong>${v.title}</strong><small>${v.tag}</small></span>
+        </button>`
+      )
+      .join("");
+    ytList.addEventListener("click", (e) => {
+      const item = e.target.closest("[data-video]");
+      if (!item) return;
+      $$(".yt__item", ytList).forEach((i) => i.classList.toggle("is-playing", i === item));
+      playVideo(item.dataset.video, true);
+      if (window.innerWidth < 920) ytPlayer.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
   }
 
   /* ---------- Header ---------- */
