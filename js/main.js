@@ -1,5 +1,5 @@
 /* =========================================================
-   CONFIG — completar con los datos del Dr. Martín
+   CONFIG — completar con los datos del Dr. Pedro
    (dejar vacío "" mientras no se tenga el dato)
    ========================================================= */
 const CONFIG = {
@@ -59,7 +59,7 @@ const CONFIG = {
       : null;
 
   const waFloat = $("#waFloat");
-  const waDefault = waLink("Hola Dr. Martín, me gustaría agendar una consulta.");
+  const waDefault = waLink("Hola Dr. Pedro, me gustaría agendar una consulta.");
   if (waDefault) {
     waFloat.href = waDefault;
   } else {
@@ -181,7 +181,7 @@ const CONFIG = {
     e.preventDefault();
     const f = new FormData(contactForm);
     const msg =
-      `Hola Dr. Martín, soy ${f.get("nombre")}.\n` +
+      `Hola Dr. Pedro, soy ${f.get("nombre")}.\n` +
       `Tipo: ${f.get("tipo")}\n` +
       `Motivo: ${f.get("motivo")}\n` +
       `Teléfono: ${f.get("telefono")}\n` +
