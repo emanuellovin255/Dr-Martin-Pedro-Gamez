@@ -1,5 +1,5 @@
 /* =========================================================
-   Dr. Pedro Gámez Hernández — Rehabilitación Bucal & Academia
+   Dr. Pedro Gámez — Rehabilitación Bucal & Academia
    ========================================================= */
 
 :root {
@@ -195,11 +195,6 @@ em { font-style: italic; }
   margin-bottom: 26px;
 }
 .hero__title em { color: var(--teal); font-weight: 400; }
-.hero__prefix {
-  display: block; margin-bottom: 14px;
-  font-family: var(--font-body); font-size: clamp(13px, 1.3vw, 15px);
-  font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--terra);
-}
 .hero__subtitle { font-size: clamp(17px, 1.7vw, 21px); color: var(--ink-2); margin-bottom: 14px; }
 .hero__subtitle strong { font-weight: 600; }
 .hero__subtitle .sep { color: var(--terra); margin: 0 6px; }
@@ -237,29 +232,6 @@ em { font-style: italic; }
   position: relative; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
   color: rgba(255, 255, 255, .6); padding: 6px 12px; border: 1px dashed rgba(255, 255, 255, .25); border-radius: 999px;
 }
-.portrait__ring {
-  position: absolute; inset: -18px; border-radius: 220px 220px 40px 40px;
-  border: 1.5px solid rgba(15, 118, 110, .25); z-index: -1;
-  animation: breathe 6s ease-in-out infinite;
-}
-@keyframes breathe { 50% { transform: scale(1.02); opacity: .6; } }
-
-.float-badge {
-  position: absolute; display: flex; align-items: center; gap: 12px;
-  padding: 12px 18px 12px 12px; border-radius: 16px;
-  background: rgba(255, 255, 255, .92); backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
-  animation: float 6s ease-in-out infinite;
-}
-.float-badge strong { display: block; font-size: 14px; line-height: 1.2; }
-.float-badge small { display: block; font-size: 12px; color: var(--muted); }
-.float-badge__icon { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: var(--teal-soft); color: var(--teal); font-size: 20px; }
-.float-badge__icon--warm { background: var(--terra-soft); color: var(--terra); }
-.float-badge--1 { top: 12%; left: -14%; }
-.float-badge--2 { top: 48%; right: -16%; animation-delay: -2s; }
-.float-badge--3 { bottom: 8%; left: -8%; animation-delay: -4s; }
-@keyframes float { 50% { transform: translateY(-10px); } }
-
 .scroll-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); width: 26px; height: 42px; border: 1.5px solid rgba(14, 27, 43, .25); border-radius: 20px; }
 .scroll-hint span { position: absolute; left: 50%; top: 8px; width: 3px; height: 8px; margin-left: -1.5px; border-radius: 2px; background: var(--teal); animation: scroll 2s infinite; }
 @keyframes scroll { 0% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(14px); } }
@@ -310,6 +282,31 @@ em { font-style: italic; }
 .audience__item svg { font-size: 22px; color: var(--teal-2); margin-top: 2px; }
 .audience__item strong { display: block; font-size: 15px; margin-bottom: 2px; }
 .audience__item span { font-size: 13.5px; color: rgba(255, 255, 255, .55); line-height: 1.5; }
+
+/* Identidad de la escuela */
+.school { display: grid; gap: 22px; margin-bottom: 22px; }
+.school__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.school__card {
+  padding: 34px; border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(20, 184, 166, .1), rgba(255, 255, 255, .02));
+  border: 1px solid rgba(20, 184, 166, .22);
+}
+.school__card--warm { background: linear-gradient(180deg, rgba(224, 146, 95, .12), rgba(255, 255, 255, .02)); border-color: rgba(224, 146, 95, .26); }
+.school__label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-2); margin-bottom: 14px; }
+.school__card--warm .school__label { color: var(--terra-2); }
+.school__title { font-family: var(--font-display); font-size: 25px; font-weight: 400; letter-spacing: -.015em; line-height: 1.25; margin-bottom: 12px; }
+.school__card p { margin: 0; color: rgba(255, 255, 255, .66); font-size: 15px; }
+.school__block {
+  padding: 30px; border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, .08); background: rgba(255, 255, 255, .03);
+}
+.school__block .audience__title { margin-bottom: 22px; }
+.values { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; }
+.values li { padding-top: 14px; border-top: 2px solid rgba(20, 184, 166, .5); }
+.goals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.values strong, .goals strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.values span, .goals li > span:last-child { display: block; font-size: 13.5px; color: rgba(255, 255, 255, .55); line-height: 1.5; }
+.goals__n { display: block; font-family: var(--font-display); font-size: 30px; font-weight: 400; color: var(--terra-2); line-height: 1; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
 
 .courses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .course {
@@ -573,8 +570,6 @@ em { font-style: italic; }
 @media (max-width: 1080px) {
   .nav__list { gap: 0; }
   .nav__link { padding: 8px 9px; font-size: 14px; }
-  .float-badge--1 { left: -4%; }
-  .float-badge--2 { right: -4%; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .academy__cta { grid-template-columns: 1fr; }
   .notify input { min-width: 0; flex: 1; }
@@ -599,6 +594,9 @@ em { font-style: italic; }
   .hero__visual { width: min(360px, 100%); margin-top: 20px; }
   .section { padding: 90px 0; }
   .audience { grid-template-columns: 1fr; }
+  .school__grid { grid-template-columns: 1fr; }
+  .values { grid-template-columns: repeat(3, 1fr); }
+  .goals { grid-template-columns: repeat(2, 1fr); }
   .courses, .services, .quotes { grid-template-columns: 1fr 1fr; }
   .service--wide { grid-column: span 2; }
   .steps__list { grid-template-columns: 1fr; gap: 20px; }
@@ -614,16 +612,11 @@ em { font-style: italic; }
   .hero { padding-bottom: 80px; }
   .hero__actions .btn { width: 100%; }
   .trust { flex-direction: column; gap: 10px; }
-  .float-badge { padding: 9px 12px 9px 9px; }
-  .float-badge__icon { width: 32px; height: 32px; font-size: 17px; }
-  .float-badge strong { font-size: 13px; }
-  .float-badge small { font-size: 11px; }
-  .float-badge--1 { left: -2%; }
-  .float-badge--2 { right: -2%; }
   .portrait__initials { font-size: 90px; }
   .scroll-hint { display: none; }
   .marquee span { font-size: 20px; }
-  .audience__grid, .courses, .services, .quotes, .stats, .form__row { grid-template-columns: 1fr; }
+  .audience__grid, .courses, .services, .quotes, .stats, .form__row, .values, .goals { grid-template-columns: 1fr; }
+  .school__card, .school__block { padding: 26px; }
   .service--wide { grid-column: auto; }
   .service, .course, .quote { padding: 26px; }
   .steps { padding: 28px; }

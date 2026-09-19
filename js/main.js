@@ -3,7 +3,7 @@
    (dejar vacío "" mientras no se tenga el dato)
    ========================================================= */
 const CONFIG = {
-  academyName: "Gámez Dental Academy",   // nombre oficial de la escuela / academia
+  academyName: "Online Advanced Dentistry School", // nombre oficial de la escuela / academia
   whatsapp: "",                           // solo dígitos con lada país, ej: "5219511234567"
   whatsappDisplay: "",                    // ej: "951 123 4567"
   youtubeChannel: "https://www.youtube.com/@DoctorPedroGamez",
